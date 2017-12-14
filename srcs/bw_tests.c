@@ -6,7 +6,7 @@
 /*   By: kdumarai <kdumarai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 19:58:34 by kdumarai          #+#    #+#             */
-/*   Updated: 2017/12/14 19:48:43 by kdumarai         ###   ########.fr       */
+/*   Updated: 2017/12/14 20:01:03 by kdumarai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ int	main(void)
 		origlen += nrl - origlen;
 	}
 	ft_putstr("-----------------------------\n");
-	ft_putstr("Binary rep of code bf: "); 
+	ft_putstr("Binary rep of code bf:"); 
 	ft_putbinnbr_len(code, origlen, padtype);
 	code = get_bitchanged_code(code);
-	ft_putstr("\nBinary rep of code af: ");
+	ft_putstr("\nBinary rep of code af:");
 	ft_putbinnbr_len(code, origlen, padtype);
 	ft_putstr("\n-----------------------------\n");
 	return (0);
