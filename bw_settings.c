@@ -6,7 +6,7 @@
 /*   By: kdumarai <kdumarai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/14 18:27:13 by kdumarai          #+#    #+#             */
-/*   Updated: 2017/12/14 18:56:45 by kdumarai         ###   ########.fr       */
+/*   Updated: 2017/12/14 19:51:39 by kdumarai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_padding	get_padtype(void)
 {
 	t_padding	padtype;
 
-	padtype = kPaddingNone; /* Set your padding here... */
+	padtype = kPaddingOctal; /* Set your padding here... */
 	return (padtype);
 }
 

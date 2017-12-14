@@ -6,7 +6,7 @@
 /*   By: kdumarai <kdumarai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 19:58:34 by kdumarai          #+#    #+#             */
-/*   Updated: 2017/12/14 18:50:55 by kdumarai         ###   ########.fr       */
+/*   Updated: 2017/12/14 19:48:43 by kdumarai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,24 @@ int	main(void)
 {
 	size_t		code;
 	size_t		origlen;
+	size_t		nrl;
 	t_padding	padtype;
 
+	nrl = 0;
 	padtype = get_padtype();
+	if (padtype % 4 != 0)
+	{
+		ft_putstr("The padding type you chose is not valid!\n");
+		return (1);
+	}
 	code = get_code();
 	origlen = ft_nbrlen_base(code, 2);
+	if (origlen % padtype != 0)
+	{
+		while (nrl < origlen)
+			nrl += padtype;
+		origlen += nrl - origlen;
+	}
 	ft_putstr("-----------------------------\n");
 	ft_putstr("Binary rep of code bf: "); 
 	ft_putbinnbr_len(code, origlen, padtype);
