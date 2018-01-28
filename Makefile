@@ -6,7 +6,7 @@
 #    By: kdumarai <kdumarai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/14 18:30:11 by kdumarai          #+#    #+#              #
-#    Updated: 2017/12/14 20:05:17 by kdumarai         ###   ########.fr        #
+#    Updated: 2018/01/28 14:15:17 by kdumarai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,11 @@ OBJS = $(SRCS:srcs/%.c=objs/%.o)
 
 all: objdir comp
 
+run: all
+	./$(NAME)
+
 objdir:
-	if [ ! -d objs ]; then mkdir objs; fi
+	@ if [ ! -d objs ]; then mkdir objs; fi
 
 comp: $(OBJS) objs/bw_settings.o
 	gcc -o $(NAME) $? -I includes
@@ -34,7 +37,6 @@ objs/%.o: srcs/%.c
 	gcc $(CFLAGS) -c $< -I includes -o $@
 
 clean:
-	rm -f $(OBJS) objs/bw_settings.o
 	rm -rf objs
 
 fclean: clean

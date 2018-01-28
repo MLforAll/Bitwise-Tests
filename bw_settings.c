@@ -6,7 +6,7 @@
 /*   By: kdumarai <kdumarai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/14 18:27:13 by kdumarai          #+#    #+#             */
-/*   Updated: 2017/12/14 19:51:39 by kdumarai         ###   ########.fr       */
+/*   Updated: 2018/01/28 14:29:14 by kdumarai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ size_t		get_code(void)
 
 size_t		get_bitchanged_code(size_t code)
 {
-	code = 0x80 | ((code >> 6) & 0x3F); /* Do your bitwise op here... */
+	code = 0xC0 | (code >> 6); /* Do your bitwise op here... */
 	return (code);
 }

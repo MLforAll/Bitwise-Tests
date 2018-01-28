@@ -6,16 +6,22 @@
 /*   By: kdumarai <kdumarai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 19:58:34 by kdumarai          #+#    #+#             */
-/*   Updated: 2017/12/14 19:51:26 by kdumarai         ###   ########.fr       */
+/*   Updated: 2018/01/28 14:19:57 by kdumarai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "bw_tests.h"
-#include <stdio.h>
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
+}
+
+void	ft_putnchar(char c, size_t n)
+{
+	while (n--)
+		ft_putchar(c);
 }
 
 size_t	ft_nbrlen_base(size_t nbr, size_t base)
